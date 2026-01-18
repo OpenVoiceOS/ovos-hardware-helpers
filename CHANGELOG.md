@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.2a2](https://github.com/OpenVoiceOS/ovos-hardware-helpers/tree/0.0.2a2) (2026-01-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-hardware-helpers/compare/0.0.2a1...0.0.2a2)
+
+**Merged pull requests:**
+
+- Update actions/setup-python action to v6 [\#9](https://github.com/OpenVoiceOS/ovos-hardware-helpers/pull/9) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v6 [\#8](https://github.com/OpenVoiceOS/ovos-hardware-helpers/pull/8) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.0.2a1](https://github.com/OpenVoiceOS/ovos-hardware-helpers/tree/0.0.2a1) (2026-01-14)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-hardware-helpers/compare/0.0.1...0.0.2a1)

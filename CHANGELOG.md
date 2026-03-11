@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0](https://github.com/OpenVoiceOS/ovos-hardware-helpers/tree/1.0.0) (2026-03-11)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-hardware-helpers/compare/0.0.2a2...1.0.0)
+
+**First official release!**
+
+- Stable implementation of LED animations, fan control, and switch abstractions
+- Uses [ovos_color_parser](https://github.com/OpenVoiceOS/ovos-color-parser) for color handling
+- Drop-in replacement for ovos-plugin-manager/hardware
+- Comprehensive support for LED animations: Breathe, Chase, Fill, Refill, Bounce, Blink, Alternating
+- Abstract base classes for fans and switches
+
 ## [0.0.2a2](https://github.com/OpenVoiceOS/ovos-hardware-helpers/tree/0.0.2a2) (2026-01-18)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-hardware-helpers/compare/0.0.2a1...0.0.2a2)

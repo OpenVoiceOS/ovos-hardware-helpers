@@ -24,7 +24,7 @@ Color handling is delegated to `ovos-color-parser`, which supports hex strings, 
 
 ## Installation
 
-```
+```bash
 pip install ovos_hardware_helpers
 ```
 

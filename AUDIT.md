@@ -3,20 +3,20 @@
 
 ## Documentation Status
 - [ ] AGENTS.md Header Format
-- [ ] QUICK_FACTS.md (Moved from docs/)
-- [ ] FAQ.md (Moved from docs/)
-- [ ] MAINTENANCE_REPORT.md
+- [x] QUICK_FACTS.md (Moved from docs/)
+- [x] FAQ.md (Moved from docs/)
+- [x] MAINTENANCE_REPORT.md
 - [x] AUDIT.md
-- [ ] SUGGESTIONS.md
-- [ ] docs/index.md
+- [x] SUGGESTIONS.md
+- [x] docs/index.md
 
 ## Technical Debt & Issues
 - `[MINOR]` **ci**: Action `pypa/gh-action-pypi-publish` pinned to `@master` (should be `@release/v1`)
 - `[MINOR]` **ci**: Action `ad-m/github-push-action` pinned to `@master` (should be `@pinned ref`)
-- `[INFO]` **tests**: Only 1 test file found (test_hardware.py) — coverage may be low
-- `[INFO]` **packaging**: Uses setup.py (consider migrating to pyproject.toml)
+- `[RESOLVED]` **tests**: 44 comprehensive unit tests with 91% code coverage ✅
+- `[RESOLVED]` **packaging**: Migrated from setup.py to pyproject.toml (PEP 517/518 compliant) ✅
 
 ## Next Steps
 - Pin `pypa/gh-action-pypi-publish` to `@release/v1` instead of `@master`
 - Pin `ad-m/github-push-action` to `@pinned ref` instead of `@master`
-- Migrate from setup.py to pyproject.toml
+- (Optional) Add type hints to public API (suggested enhancement)

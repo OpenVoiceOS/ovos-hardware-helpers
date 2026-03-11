@@ -4,7 +4,7 @@
 > This file tracks proposed improvements for human developers. Each entry includes
 > the problem/opportunity, proposed solution, and estimated impact.
 
-### 1. Migrate `setup.py` → `pyproject.toml`
+## 1. Migrate `setup.py` → `pyproject.toml`
 
 **Problem/Opportunity**: This repo still uses `setup.py` for packaging.
 `setup.py` is legacy and `pyproject.toml` is the modern standard (PEP 517/518/621).
@@ -16,7 +16,7 @@
 
 **Estimated Impact**: Medium — improves build reproducibility and tool compatibility.
 
-### 2. Add type hints to public API
+## 2. Add type hints to public API
 
 **Problem/Opportunity**: Functions and classes may lack full type annotations,
 reducing IDE support and making the codebase harder to audit.
@@ -26,7 +26,7 @@ type hints. Run `mypy` to verify.
 
 **Estimated Impact**: Low effort, high long-term benefit for maintainability.
 
-### 3. Expand unit test coverage
+## 3. Expand unit test coverage
 
 **Problem/Opportunity**: Test coverage may be incomplete, leading to undetected
 regressions during refactors or dependency upgrades.
@@ -36,7 +36,7 @@ uncovered edge cases, especially around plugin loading and error paths.
 
 **Estimated Impact**: Medium — reduces regression risk significantly.
 
-### 4. Enrich this `SUGGESTIONS.md`
+## 4. Enrich this `SUGGESTIONS.md`
 
 **Problem/Opportunity**: This file was auto-generated and contains only generic
 suggestions.

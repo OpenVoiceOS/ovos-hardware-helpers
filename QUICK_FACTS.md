@@ -8,5 +8,5 @@ Helper scripts for some hardware
 | Package Name | `ovos_hardware_helpers` |
 | Version | `1.0.0` |
 | License | Apache-2.0 |
-| Repository | [https://github.com/OpenVoiceOS/ovos_hardware_helpers](https://github.com/OpenVoiceOS/ovos_hardware_helpers) |
+| Repository | [https://github.com/OpenVoiceOS/ovos-hardware-helpers](https://github.com/OpenVoiceOS/ovos-hardware-helpers) |
 | Python Support | >=3.9 |

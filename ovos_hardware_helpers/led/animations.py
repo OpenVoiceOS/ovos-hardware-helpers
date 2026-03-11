@@ -5,7 +5,7 @@ from ovos_utils.log import LOG
 from time import time
 from typing import Optional
 
-from ovos_hardware_helpers.hardware.led import AbstractLed
+from ovos_hardware_helpers.led import AbstractLed
 
 from ovos_color_parser import sRGBAColor
 from ovos_color_parser.models import Color

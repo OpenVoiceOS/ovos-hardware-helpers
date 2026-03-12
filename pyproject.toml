@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos_hardware_helpers"
+description = "Helper scripts for some hardware"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "builderjer", email = "builderjer@gmail.com" }
+]
+keywords = ["ovos", "hardware", "led", "fan", "switches"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "ovos-color-parser",
+    "ovos-utils>=0.0.37",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/OpenVoiceOS/ovos_hardware_helpers"
+Repository = "https://github.com/OpenVoiceOS/ovos_hardware_helpers"
+Issues = "https://github.com/OpenVoiceOS/ovos_hardware_helpers/issues"
+
+[tool.setuptools.dynamic.version]
+attr = "ovos_hardware_helpers.version.VERSION"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ovos_hardware_helpers*"]
+
+[tool.setuptools.package-data]
+ovos_hardware_helpers = ["py.typed"]

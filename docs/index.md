@@ -6,7 +6,7 @@ A Python library providing abstract base classes for hardware components used in
 - PyPI package: `ovos_hardware_helpers`
 - License: Apache-2.0
 - Repository: https://github.com/OpenVoiceOS/ovos_hardware_helpers
-- Designed as a drop-in replacement for the hardware interfaces previously embedded in `ovos-plugin-manager`
+- Drop-in replacement for the hardware interfaces previously in `ovos-plugin-manager`
 
 ## What It Provides
 
@@ -30,7 +30,7 @@ pip install ovos_hardware_helpers
 
 Dependency: `ovos-color-parser`
 
-## AbstractLed — `ovos_hardware_helpers/led/__init__.py`
+## AbstractLed: `ovos_hardware_helpers/led/__init__.py`
 
 ```python
 class AbstractLed:
@@ -60,15 +60,15 @@ class AbstractLed:
     def get_capabilities(self) -> dict: ...  # backwards-compat alias for .capabilities
 ```
 
-`eval_color(color)` is a module-level helper that normalises a color argument to an `ovos_color_parser.models.Color` object. It accepts:
+`eval_color(color)` is a module-level helper that normalizes a color argument to an `ovos_color_parser.models.Color` object. It accepts:
 
-- A `Color` instance — returned as-is
-- A hex string like `"#ff0000"` — parsed via `sRGBAColor.from_hex_str()`
-- A CSS color name string — resolved via `color_from_description()`, with fuzzy fallback
-- An RGB or RGBA tuple of 3–4 ints — wrapped in `sRGBAColor`
-- Anything else — falls back to "Mycroft Blue"
+- A `Color` instance: returned as-is
+- A hex string like `"#ff0000"`: parsed by `sRGBAColor.from_hex_str()`
+- A CSS color name string: resolved by `color_from_description()`, with fuzzy fallback
+- An RGB or RGBA tuple of 3-4 ints: wrapped in `sRGBAColor`
+- Anything else: falls back to "Mycroft Blue"
 
-## AbstractFan — `ovos_hardware_helpers/fan.py`
+## AbstractFan: `ovos_hardware_helpers/fan.py`
 
 ```python
 class AbstractFan:
@@ -86,10 +86,10 @@ class AbstractFan:
 
     @abstractmethod
     def shutdown(self): ...
-    # cleanup and set to a reasonable speed
+    # cleanup and set to a safe speed
 ```
 
-## AbstractSwitches — `ovos_hardware_helpers/switches.py`
+## AbstractSwitches: `ovos_hardware_helpers/switches.py`
 
 ```python
 class AbstractSwitches:
@@ -118,7 +118,7 @@ class AbstractSwitches:
     def get_capabilities(self) -> dict: ...  # backwards-compat alias for .capabilities
 ```
 
-## LED Animations — `ovos_hardware_helpers/led/animations.py`
+## LED Animations: `ovos_hardware_helpers/led/animations.py`
 
 All animation classes inherit from `LedAnimation`. The `start()` method runs synchronously (blocking) until the animation ends or `stop()` is called. Animations use `threading.Event` for delays so they can be interrupted cleanly.
 
@@ -144,7 +144,7 @@ class LedAnimation:
 | `FillLedAnimation` | `leds, fill_color, reverse=False` | LEDs turn on in sequence and stay on. `one_shot` only |
 | `RefillLedAnimation` | `leds, fill_color, reverse=False` | Repeating fill-on then fill-off cycle |
 | `BounceLedAnimation` | `leds, fill_color, reverse=False` | Fill forward then reverse-fill to black, repeat |
-| `BlinkLedAnimation` | `leds, color, num_blinks=2, repeat=False` | Blink `num_blinks` times; optionally repeat with 0.5 s pause |
+| `BlinkLedAnimation` | `leds, color, num_blinks=2, repeat=False` | Blink `num_blinks` times. Repeat with a 0.5 s pause if `repeat=True` |
 | `AlternatingLedAnimation` | `leds, color` | Even/odd LEDs alternate at 0.5 s intervals |
 
 The module exposes a registry dict:
@@ -242,7 +242,7 @@ class GpioPwmFan(AbstractFan):
 
 ## Cross-References
 
-- **ovos-PHAL** — PHAL plugins implement `AbstractLed`, `AbstractFan`, and `AbstractSwitches` to expose hardware to OVOS core
-- **ovos-plugin-manager** — previous home of equivalent hardware interfaces; `ovos-hardware-helpers` is the replacement
-- **ovos-color-parser** — required dependency for all color handling
-- PHAL plugin examples: `ovos-PHAL-plugin-mk2`, hardware-specific plugins for SJ201 board
+- [ovos-PHAL](https://github.com/OpenVoiceOS/ovos-PHAL): PHAL plugins implement `AbstractLed`, `AbstractFan`, and `AbstractSwitches` to expose hardware to OVOS core
+- [ovos-plugin-manager](https://github.com/OpenVoiceOS/ovos-plugin-manager): previous home of the equivalent hardware interfaces that `ovos-hardware-helpers` replaces
+- [ovos-color-parser](https://github.com/OpenVoiceOS/ovos-color-parser): required dependency for all color handling
+- PHAL plugin examples: `ovos-PHAL-plugin-mk2`, hardware-specific plugins for the SJ201 board

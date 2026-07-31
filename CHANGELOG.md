@@ -1,29 +1,16 @@
 # Changelog
 
-## [1.0.1a1](https://github.com/OpenVoiceOS/ovos-hardware-helpers/tree/1.0.1a1) (2026-03-11)
+## [1.0.2a2](https://github.com/OpenVoiceOS/ovos-hardware-helpers/tree/1.0.2a2) (2026-07-31)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-hardware-helpers/compare/0.0.2a2...1.0.1a1)
-
-**Merged pull requests:**
-
-- chore: release version 1.0.0 - first official release [\#12](https://github.com/OpenVoiceOS/ovos-hardware-helpers/pull/12) ([JarbasAl](https://github.com/JarbasAl))
-
-## [0.0.2a2](https://github.com/OpenVoiceOS/ovos-hardware-helpers/tree/0.0.2a2) (2026-01-18)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-hardware-helpers/compare/0.0.2a1...0.0.2a2)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-hardware-helpers/compare/1.0.2a1...1.0.2a2)
 
 **Merged pull requests:**
 
-- Update actions/setup-python action to v6 [\#9](https://github.com/OpenVoiceOS/ovos-hardware-helpers/pull/9) ([renovate[bot]](https://github.com/apps/renovate))
-- Update actions/checkout action to v6 [\#8](https://github.com/OpenVoiceOS/ovos-hardware-helpers/pull/8) ([renovate[bot]](https://github.com/apps/renovate))
+- docs: rewrite README in Simplified Technical English [\#15](https://github.com/OpenVoiceOS/ovos-hardware-helpers/pull/15) ([JarbasAl](https://github.com/JarbasAl))
 
-## [0.0.2a1](https://github.com/OpenVoiceOS/ovos-hardware-helpers/tree/0.0.2a1) (2026-01-14)
+## [1.0.2a1](https://github.com/OpenVoiceOS/ovos-hardware-helpers/tree/1.0.2a1) (2026-03-12)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-hardware-helpers/compare/0.0.1...0.0.2a1)
-
-**Merged pull requests:**
-
-- Configure Renovate [\#1](https://github.com/OpenVoiceOS/ovos-hardware-helpers/pull/1) ([renovate[bot]](https://github.com/apps/renovate))
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-hardware-helpers/compare/1.0.1...1.0.2a1)
 
 
 

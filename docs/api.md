@@ -1,5 +1,5 @@
 
-# ovos-hardware-helpers — Complete API Reference
+# ovos-hardware-helpers: Complete API Reference
 
 ## Module: `ovos_hardware_helpers.led`
 
@@ -7,7 +7,7 @@ File: `ovos_hardware_helpers/led/__init__.py`
 
 ### `eval_color(color) -> Color`
 
-Normalises any colour representation to an `ovos_color_parser.models.Color` object.
+Normalizes any color representation to an `ovos_color_parser.models.Color` object.
 
 | Input type | Resolution strategy |
 |------------|---------------------|
@@ -18,7 +18,7 @@ Normalises any colour representation to an `ovos_color_parser.models.Color` obje
 | 3- or 4-tuple of ints | `sRGBAColor(color)` |
 | Anything else | Falls back to `color_from_description("Mycroft blue", fuzzy=False)` |
 
-Logs at DEBUG level while resolving; logs WARNING on final fallback.
+Logs at DEBUG level while resolving. Logs WARNING on final fallback.
 
 ---
 
@@ -49,16 +49,16 @@ Return a dict describing what this LED object supports. Shape is implementation-
 def set_led(self, led_idx: int, color: tuple, immediate: bool = True)
 ```
 Set a single LED by index.
-- `led_idx` — zero-based index
-- `color` — `(R, G, B)` tuple of ints 0–255
-- `immediate` — if `True`, push to hardware now; if `False`, wait for `show()`
+- `led_idx`: zero-based index
+- `color`: `(R, G, B)` tuple of ints 0–255
+- `immediate`: if `True`, push to hardware now. If `False`, wait for `show()`
 
 ```python
 @abstractmethod
 def fill(self, color: tuple)
 ```
-Set all LEDs to the same colour immediately.
-- `color` — `(R, G, B)` tuple of ints 0–255
+Set all LEDs to the same color immediately.
+- `color`: `(R, G, B)` tuple of ints 0–255
 
 ```python
 @abstractmethod
@@ -76,15 +76,15 @@ Clean up resources and turn off all LEDs. Must be idempotent.
 @staticmethod
 def scale_brightness(color_val: int, bright_val: float) -> float
 ```
-Scale one colour channel by a brightness factor.
-- `color_val` — 0–255 raw channel value
-- `bright_val` — 0.0–1.0 scalar
+Scale one color channel by a brightness factor.
+- `color_val`: 0–255 raw channel value
+- `bright_val`: 0.0–1.0 scalar
 - Returns: float ≤ 255.0
 
 ```python
 def get_capabilities(self) -> dict
 ```
-Backwards-compatible wrapper; returns `self.capabilities`. Prefer the property in new code.
+Backwards-compatible wrapper. Returns `self.capabilities`. Prefer the property in new code.
 
 ---
 
@@ -182,7 +182,7 @@ Perform cleanup (e.g. unregister GPIO callbacks).
 ```python
 def get_capabilities(self) -> dict
 ```
-Backwards-compatible wrapper; returns `self.capabilities`.
+Backwards-compatible wrapper. Returns `self.capabilities`.
 
 ---
 
@@ -206,16 +206,16 @@ Base class for all LED animations.
 ```python
 def __init__(self, leds: AbstractLed, **kwargs)
 ```
-- `leds` — any `AbstractLed` implementation
-- `self._delay` — `threading.Event` used for interruptible sleeps
+- `leds`: any `AbstractLed` implementation
+- `self._delay`: `threading.Event` used for interruptible sleeps
 
 ```python
 @abstractmethod
 def start(self, timeout: Optional[int] = None, one_shot: bool = False)
 ```
 Run the animation. Blocks until complete.
-- `timeout` — stop after this many seconds (None = run until `stop()`)
-- `one_shot` — if `True`, run one cycle and return
+- `timeout`: stop after this many seconds (None = run until `stop()`)
+- `one_shot`: if `True`, run one cycle and return
 
 ```python
 @abstractmethod
@@ -231,8 +231,8 @@ Signal the animation to stop. LEDs are reset to black.
 def __init__(self, leds: AbstractLed, color: Color)
 ```
 Brightness pulses from 0 → 1 → 0 continuously. Parameters:
-- `self.step = 0.05` — brightness increment per tick
-- `self.step_delay = 0.05` — seconds between ticks
+- `self.step = 0.05`: brightness increment per tick
+- `self.step_delay = 0.05`: seconds between ticks
 
 Uses `leds.fill()` with brightness-scaled RGB values. After stopping, fills with BLACK.
 
@@ -243,8 +243,8 @@ Uses `leds.fill()` with brightness-scaled RGB values. After stopping, fills with
 ```python
 def __init__(self, leds: AbstractLed, foreground_color: Color, background_color: Color = BLACK)
 ```
-One foreground-coloured LED advances through all indices. All other LEDs remain at `background_color`.
-- `self.step_delay = 0.1` — seconds between LED advances
+One foreground-colored LED advances through all indices. All other LEDs remain at `background_color`.
+- `self.step_delay = 0.1`: seconds between LED advances
 
 After stopping, fills with BLACK.
 
@@ -255,9 +255,9 @@ After stopping, fills with BLACK.
 ```python
 def __init__(self, leds: AbstractLed, fill_color: Color, reverse: bool = False)
 ```
-Turns LEDs on one by one in index order (or reverse). LEDs stay on after animation; does not reset to black.
-- `self.step_delay = 0.05` — seconds between each LED
-- Does not support `timeout` or persistent looping; warns if `one_shot=False`
+Turns LEDs on one by one in index order (or reverse). LEDs stay on after the animation and do not reset to black.
+- `self.step_delay = 0.05`: seconds between each LED
+- Does not support `timeout` or persistent looping. Warns if `one_shot=False`
 
 ---
 
@@ -314,3 +314,6 @@ animations: dict[str, type[LedAnimation]] = {
 ```
 
 Allows animation classes to be looked up by string name. Useful for configuration-driven animation selection.
+
+---
+[Home](index.md)
